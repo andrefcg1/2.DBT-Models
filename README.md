@@ -69,15 +69,6 @@ To run these models, you'll need to:
 
 The CSV files are automatically loaded as seed tables when you run `dbt seed`, making them available for the models to reference. DuckDB will create a local `analytics.duckdb` file to store the data.
 
-## Why DuckDB?
-
-This project uses DuckDB because it's:
-- **Zero-configuration**: No database server setup required
-- **Fast**: Optimized for analytical queries
-- **Lightweight**: Single file database
-- **SQL-compatible**: Standard SQL syntax
-- **Perfect for analytics**: Designed for OLAP workloads
-
 ## Data Quality Tests
 
 The project includes comprehensive data quality tests:
