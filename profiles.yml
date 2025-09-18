@@ -1,0 +1,7 @@
+dbt_models:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: 'analytics.duckdb'
+      schema: main
