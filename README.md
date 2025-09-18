@@ -73,3 +73,8 @@ Run tests with: `dbt test`
     ├── test_deposit_order.sql
     └── test_kyc_discord_filtering.sql
 ```
+
+## Bonus
+
+### Snapshot
+Found an opportunity to add a snapshot to track the player KYC status.
