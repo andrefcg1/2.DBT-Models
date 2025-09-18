@@ -16,46 +16,12 @@ These CSV files are loaded as seeds using `dbt seed` command.
 ### Model 1: Daily Player Transactions (`model_1_daily_player_transactions.sql`)
 **Purpose**: Creates one row per player per day with separate columns for deposits and withdrawals.
 
-**Key Features**:
-- Aggregates transactions by player and date
-- Deposits are shown as positive values
-- Withdrawals are shown as negative values (as requested)
-- Orders results by player ID and transaction date
-
-**Output Columns**:
-- `player_id`: Player identifier
-- `transaction_date`: Date of transactions
-- `deposits`: Total deposits for the day
-- `withdrawals`: Total withdrawals for the day (negative values)
-
 ### Model 2: KYC Discord Deposits by Country (`model_2_kyc_discord_deposits.sql`)
 **Purpose**: Calculates sum and count of deposits per country for KYC-approved players who came from Discord affiliates.
 
-**Key Features**:
-- Filters for players with `is_kyc_approved = true`
-- Filters for players with affiliate origin = 'Discord'
-- Aggregates deposit amounts and counts by country
-- Orders results by total deposits (descending)
-
-**Output Columns**:
-- `country_code`: Player's country code
-- `total_deposits_by_country`: Sum of all deposits for the country
-- `total_deposit_count_by_country`: Count of all deposits for the country
 
 ### Model 3: Top Three Deposits per Player (`model_3_top_three_deposits.sql`)
 **Purpose**: Creates one row per player showing their three largest deposit amounts.
-
-**Key Features**:
-- Uses window functions to rank deposits by amount
-- Only includes deposit transactions
-- Shows the three largest deposits in separate columns
-- Orders results by player ID
-
-**Output Columns**:
-- `player_id`: Player identifier
-- `largest_deposit`: Player's highest deposit amount
-- `second_largest_deposit`: Player's second highest deposit amount
-- `third_largest_deposit`: Player's third highest deposit amount
 
 ## Usage
 
@@ -67,11 +33,7 @@ To run these models, you'll need to:
 4. Run `dbt run` to execute all models
 5. Use `dbt test` to run data quality tests
 
-The CSV files are automatically loaded as seed tables when you run `dbt seed`, making them available for the models to reference. DuckDB will create a local `analytics.duckdb` file to store the data.
-
 ## Data Quality Tests
-
-The project includes comprehensive data quality tests:
 
 ### **Seed Tests:**
 - **Unique constraints** on all ID columns
