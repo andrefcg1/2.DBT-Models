@@ -102,23 +102,6 @@ models:
       - name: third_largest_deposit
         description: "Player's third biggest deposit"
 
-  - name: model_4_kyc_status_changes
-    description: "KYC approval statistics by country"
-    columns:
-      - name: country_code
-        description: "Country code"
-        tests:
-          - not_null
-      - name: total_players
-        description: "Total number of players from this country"
-      - name: players_ever_approved
-        description: "How many players from this country got KYC approved"
-      - name: players_currently_approved
-        description: "How many players from this country are currently KYC approved"
-      - name: approval_rate_percentage
-        description: "What percentage of players from this country got approved"
-      - name: avg_days_to_approval
-        description: "Average days it takes for players from this country to get approved"
 
 snapshots:
   - name: player_kyc_status_snapshot
