@@ -66,7 +66,8 @@ Run tests with: `dbt test`
 │   ├── schema.yml           # Model documentation and tests
 │   ├── model_1_daily_player_transactions.sql
 │   ├── model_2_kyc_discord_deposits.sql
-│   └── model_3_top_three_deposits.sql
+│   ├── model_3_top_three_deposits.sql
+│   └── model_4_kyc_status_changes.sql
 └── tests/                   # Custom data quality tests
     ├── test_withdrawals_are_negative.sql
     ├── test_deposits_are_positive.sql
@@ -77,4 +78,4 @@ Run tests with: `dbt test`
 ## Bonus
 
 ### Snapshot
-Found an opportunity to add a snapshot to track the player KYC status.
+Found an opportunity to add a snapshot to track the player KYC status. The model is named "model_4_kyc_status_changes.sql"
